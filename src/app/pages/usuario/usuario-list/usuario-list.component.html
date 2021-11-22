@@ -3,6 +3,8 @@
     id="gridContainer"
     [dataSource]="dataSourceUser"
     [showBorders]="true">
+    <dxo-search-panel [visible]="true" [width]="300"></dxo-search-panel>
+    <dxo-paging [pageSize]="10"> </dxo-paging>
     <dxo-editing
       mode="row"
       [allowUpdating]="true"
@@ -21,6 +23,5 @@
     <!-- User Name -->
     <dxi-column dataField="last_name" caption="Ultimo nome">
     </dxi-column>
-
       </dx-data-grid>
 </div>

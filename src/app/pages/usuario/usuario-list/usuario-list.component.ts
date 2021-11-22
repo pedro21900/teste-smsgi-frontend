@@ -3,15 +3,14 @@ import DataSource from 'devextreme/data/data_source';
 import {LoadOptions} from "devextreme/data/load_options";
 import CustomStore from "devextreme/data/custom_store";
 import {Title} from "@angular/platform-browser";
+import {DataService} from "../../../shared/services/data.service";
 import {Data} from "../../../domain/data";
-//import {AccessLevelService} from "../../../service/access-level.service";
-import {UserService} from "../../../shared/services/user.service";
 
 @Component({
   selector: 'app-transmissao',
   templateUrl: 'usuario-list.component.html',
   styles: [],
-  providers: [UserService]
+  providers: [DataService]
 })
 export class UsuarioListComponent {
   RESOURCE_NAME = 'Usuários';
@@ -20,7 +19,7 @@ export class UsuarioListComponent {
     dataSourceUser: DataSource;
   dataSourceAccessLevel: any;
 
-    constructor(private userService: UserService, private title: Title ) {
+    constructor(private userService: DataService, private title: Title ) {
         this.title.setTitle(this.RESOURCE_NAME);
         this.dataSourceUser = new DataSource({
             store: new CustomStore({
@@ -31,23 +30,14 @@ export class UsuarioListComponent {
                 insert: (values) => {
                     return userService.insert(values).toPromise();
                 },
-/*                update: (key, values) => {
+                update: (key, values) => {
                     return userService.patch(key, Data.from(values)).toPromise()
-                },*/
+                },
                 remove: (key) => {
                    return  userService.delete(key).toPromise();
                 }
             }),
             sort: [{selector: 'nome', desc: false}]
         })
-  /*    this.dataSourceAccessLevel =new CustomStore({
-          key:'id',
-          load: options => accessLevelService.findAll(options).toPromise(),
-          byKey: key => accessLevelService.findById(key).toPromise()
-        });*/
     }
-  customizeText():any {
-    return "************";
-  }
-
 }

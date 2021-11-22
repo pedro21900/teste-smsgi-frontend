@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
-import {UserService} from "../../shared/services/user.service";
+import {DataService} from "../../shared/services/data.service";
 
 
 
 @Component({
     selector: 'app-user',
     templateUrl: 'usuario-page.html',
-    providers: [UserService]
+    providers: [DataService]
 })
 export class UsuarioPageComponent {
     RESOURCE_NAME = 'Horizon';
