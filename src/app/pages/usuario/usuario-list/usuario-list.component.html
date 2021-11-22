@@ -1,0 +1,26 @@
+<div class="content-block">
+  <dx-data-grid
+    id="gridContainer"
+    [dataSource]="dataSourceUser"
+    [showBorders]="true">
+    <dxo-editing
+      mode="row"
+      [allowUpdating]="true"
+      [allowAdding]="true"
+      [allowDeleting]="true">
+    </dxo-editing>
+    <!-- COLUMNS -->
+    <dxi-column dataField="id" caption="Id" [visible]="false">
+    </dxi-column>
+    <!-- Ativo -->
+    <dxi-column dataField="email" caption="Email">
+    </dxi-column>
+    <!-- Nome -->
+    <dxi-column dataField="first_name" caption="Primeiro nome">
+    </dxi-column>
+    <!-- User Name -->
+    <dxi-column dataField="last_name" caption="Ultimo nome">
+    </dxi-column>
+
+      </dx-data-grid>
+</div>

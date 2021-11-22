@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "5df075b3-9f9e-4a8f-a2c6-8cb09b779f36"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -50,6 +53,10 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/devextreme/dist/css/dx.common.css",
+              "src/themes/generated/theme.base.css",
+              "src/themes/generated/theme.additional.css",
+              "src/dx-styles.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -59,8 +66,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "7mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -94,7 +101,8 @@
               "browserTarget": "teste-smsgi-frontend:build:production"
             },
             "development": {
-              "browserTarget": "teste-smsgi-frontend:build:development"
+              "browserTarget": "teste-smsgi-frontend:build:development",
+              "proxyConfig": "proxy.config.json"
             }
           },
           "defaultConfiguration": "development"
