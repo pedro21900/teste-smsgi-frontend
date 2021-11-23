@@ -1,4 +1,4 @@
-FROM node AS api-smsgi-backend
+FROM node:14 AS api-smsgi-backend
 
 RUN mkdir -p ./home/teste-smsgi-frontend
 
