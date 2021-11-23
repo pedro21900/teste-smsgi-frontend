@@ -1,16 +1,15 @@
-FROM node:14 AS api-smsgi-backend
+FROM node
 
-RUN mkdir -p ./home/teste-smsgi-frontend
+WORKDIR /app
 
-WORKDIR ./home/teste-smsgi-frontend
+COPY package.json ./
 
-COPY / .
+RUN npm install -g @angular/cli
 
-RUN npm i
+RUN npm install
 
-#FROM adoptopenjdk/openjdk11:alpine-jre
+COPY . .
 
-#COPY --from=api-smsgi-backend /home/teste-smsgi-frontend/target/*.jar api-smsgi-backend-0.0.1-SNAPSHOT.jar
+EXPOSE 4200
 
-CMD ["npx", "ng", "s"]
-
+CMD npm run start
