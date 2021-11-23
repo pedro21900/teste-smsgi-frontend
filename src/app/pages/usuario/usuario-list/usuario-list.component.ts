@@ -15,6 +15,12 @@ import {Data} from "../../../domain/data";
 export class UsuarioListComponent {
   RESOURCE_NAME = 'Usuários';
 
+  readonly allowedPageSizes = [5, 10, 'all'];
+
+  readonly displayModes = [{ text: "Display Mode 'full'", value: 'full' }, { text: "Display Mode 'compact'", value: 'compact' }];
+
+  displayMode = 'full';
+
     // Datasource do componente DataGrid
     dataSourceUser: DataSource;
   dataSourceAccessLevel: any;
@@ -40,4 +46,7 @@ export class UsuarioListComponent {
             sort: [{selector: 'nome', desc: false}]
         })
     }
+  get isCompactMode() {
+    return this.displayMode === 'compact';
+  }
 }

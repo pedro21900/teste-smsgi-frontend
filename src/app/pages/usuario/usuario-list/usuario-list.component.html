@@ -3,8 +3,21 @@
     id="gridContainer"
     [dataSource]="dataSourceUser"
     [showBorders]="true">
-    <dxo-search-panel [visible]="true" [width]="300"></dxo-search-panel>
-    <dxo-paging [pageSize]="10"> </dxo-paging>
+    <dxo-search-panel [visible]="true"
+                      [width]="300">
+
+    </dxo-search-panel>
+    <dxo-scrolling rowRenderingMode="virtual"> </dxo-scrolling>
+    <dxo-paging [pageSize]="5"> </dxo-paging>
+    <dxo-pager
+      [visible]="true"
+      [allowedPageSizes]="allowedPageSizes"
+      [displayMode]="displayMode"
+      [showPageSizeSelector]="true"
+      [showInfo]=true
+      [showNavigationButtons]=true
+    >
+    </dxo-pager>
     <dxo-editing
       mode="row"
       [allowUpdating]="true"
@@ -23,5 +36,5 @@
     <!-- User Name -->
     <dxi-column dataField="last_name" caption="Ultimo nome">
     </dxi-column>
-      </dx-data-grid>
+  </dx-data-grid>
 </div>
