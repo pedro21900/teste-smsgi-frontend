@@ -3,22 +3,21 @@ import {UsuarioListComponent} from "./usuario-list/usuario-list.component";
 import {UsuarioPageRoutingModule} from "./usuario-page-routing.module";
 import {CommonModule} from '@angular/common';
 import {UsuarioPageComponent} from "./usuario-page.component";
-import {UsuarioEditComponent} from "./usuario-edit/usuario-edit.component";
-import {DxDataGridModule, DxTreeListModule} from "devextreme-angular";
-
+import {DxButtonModule, DxDataGridModule, DxFormModule, DxTreeListModule} from "devextreme-angular";
 
 @NgModule({
-    declarations: [
-        UsuarioPageComponent,
-        UsuarioListComponent,
-        UsuarioEditComponent
-    ],
-    imports: [
-        UsuarioPageRoutingModule,
-        CommonModule,
-        DxDataGridModule,
-        DxTreeListModule,
-    ]
+  declarations: [
+    UsuarioPageComponent,
+    UsuarioListComponent,
+  ],
+  imports: [
+    UsuarioPageRoutingModule,
+    CommonModule,
+    DxDataGridModule,
+    DxTreeListModule,
+    DxFormModule,
+    DxButtonModule,
+  ]
 })
 export class UsuarioPageModule {
 }

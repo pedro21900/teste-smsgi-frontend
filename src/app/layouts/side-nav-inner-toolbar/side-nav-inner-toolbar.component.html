@@ -36,11 +36,6 @@
   </app-side-navigation-menu>
 
   <div class="container">
-    <app-header
-      [menuToggleEnabled]="minMenuSize === 0"
-      (menuToggle)="menuOpened = !menuOpened;">
-    </app-header>
-
     <dx-scroll-view class="layout-body with-footer">
       <div class="content">
         <ng-content></ng-content>
